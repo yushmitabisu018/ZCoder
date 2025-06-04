@@ -1,0 +1,41 @@
+.land {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: 60px auto;
+  background: linear-gradient(135deg, #f4f0ff, #f9f9fc);
+  font-family: 'Raleway', sans-serif;
+  color: #392983;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  border-radius: 16px;
+  box-shadow: 0 16px 32px rgba(81, 45, 168, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.land:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(81, 45, 168, 0.15);
+}
+
+.land h1,
+.land h2 {
+  font-weight: 700;
+  color: #4b2da1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

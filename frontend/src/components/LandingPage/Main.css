@@ -1,0 +1,136 @@
+ .hero-section {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #0d1117;
+  color: white;
+  width: 100vw;
+} 
+.hero-heading {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.typed-text {
+  color: #A294F9;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+  color: #A294F9;;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.hero-buttons {
+  margin: 30px 0;
+}
+
+.hero-button {
+  background: linear-gradient(to right, #7F55B1, #52357B);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-img {
+  width: 400px;
+  border: 2px solid #FFAAAA;
+  border-radius: 10px;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin: 80px 0 30px;
+  color: orange;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-box {
+  background-color: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  border: 1px solid #333;
+}
+
+.feature-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.feature-icon svg{
+  color: orange;
+}
+.feature-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #ffffff;;
+}
+
+.feature-description {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial-box {
+  background-color: #161b22;
+  padding: 20px;
+  width: 320px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  text-align: left;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.testimonial-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 1px solid white;
+}
+
+.testimonial-company {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}

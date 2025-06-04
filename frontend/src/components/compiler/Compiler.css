@@ -1,0 +1,106 @@
+ body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.compiler-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+  color: white;
+}
+
+.editor-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #1e1e1e;
+}
+
+.io-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #1e1e1e;
+  border-left: 1px solid #333;
+}
+.io-section label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white; 
+  margin-bottom: 4px;
+  display: block;
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.code-editor,
+.input-box,
+.output-box {
+  width: 100%;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 14px;
+  border-radius: 4px;
+  resize: none;
+  white-space: pre-wrap;     
+  word-wrap: break-word;     
+  overflow-y: auto;         
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.code-editor {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+
+}
+
+.input-box {
+  height: 200px;
+  margin-bottom: 10px;  
+}
+
+.output-box {
+  height: 100%;
+  overflow-y: auto;
+  background-color: #2d2d2d;;
+}
+
+button {
+  width: 154px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  background-color: #27548A;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+.editor-wrapper {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+} 

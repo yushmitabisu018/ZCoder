@@ -1,0 +1,86 @@
+.top-header {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;;
+  padding: 0 40px;
+  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.left img {
+  height: 48px;
+  width: 48px;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.center-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+
+.nav-link {
+  color: #c9d1d9;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.nav-link:hover {
+  color:#547792;
+}
+
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #547792; 
+}
+
+.nav-link::after {
+  transition: all 0.3s ease;
+}
+.right {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.contact,
+.lo {
+  cursor: pointer;
+  color: #c9d1d9;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact:hover,
+.lo:hover {
+  color: #ff7b72;
+}

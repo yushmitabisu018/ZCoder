@@ -1,0 +1,200 @@
+
+
+ @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+   margin-left: -150px;
+   margin-top: 50px;
+  width: 100px;
+  height: 96px;
+  background-color: #f0f0ff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(70, 49, 156, 0.15);
+}
+
+.out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  background-color: #0D1117;
+  width:100vw;
+}
+
+ul {
+  list-style-type: none;
+}
+.coder {
+  margin-left: 700px;
+  margin-top: 95px;
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+}
+#login {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 400px;
+  text-align: center;
+  background-color: #fff;
+  margin: 40px auto;
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(70, 49, 156, 0.15);
+}
+
+.container > header {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 40px auto;
+  position: relative;
+  height: 35px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.header-headings,
+.section-headings {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateY(0);
+}
+
+.header-headings > span,
+.section-headings > span {
+  color: #46319c;
+  font-weight: 400;
+}
+
+.container > section {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 30px auto 40px;
+  position: relative;
+  height: 25px;
+  width: 350px;
+  overflow: hidden;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.options > span {
+  color: #c9b7e2;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.options > span:hover,
+.options > span:active {
+  color: #46319c;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.account-form-fields {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.account-form-fields.sign-in {
+  max-height: 123px;
+}
+
+.account-form-fields.sign-up {
+  max-height: 250px;
+}
+
+.account-form-fields > input {
+  margin-bottom: 15px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #c9b7e2;
+  transition: box-shadow 0.2s ease;
+}
+
+.account-form-fields > input::placeholder {
+  color: #c9b7e2;
+}
+
+.account-form-fields > input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(70, 49, 156, 0.2);
+}
+
+.btn-submit-form {
+  padding: 12px 24px;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: #46319c;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.13);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit-form:hover,
+.btn-submit-form:focus,
+.btn-submit-form:active {
+  background: #36228a;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+footer {
+  background: #46319c;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer > a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+} 
