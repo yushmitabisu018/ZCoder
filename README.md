@@ -13,6 +13,7 @@ ZCoder is a full-stack collaborative coding platform that enables real-time code
 ## Video
 For understanding of the application you can check this out https://drive.google.com/file/d/1SL1q4Iqrtc1EPAuu2oijeD9YflBhDGr6/view?usp=sharing
 
+
 ## 🚀 Project Setup
 
 1. Clone the Repository  
@@ -20,21 +21,22 @@ For understanding of the application you can check this out https://drive.google
    git clone https://github.com/yushmitabisu018/ZCoder.git
    cd ZCoder
    ```
-
-   2. Install the necessary dependancies
-   ``` bash
+2. Install the necessary dependancies
+   ```bash
    cd frontend
-  npm install
-  cd ../server
-  npm install 
+   npm install
+   ```
+   ```bash
+   cd ../server
+   npm install 
    ```
 3. Run the Backend Server
-   ``` bash
+   ```bash
    cd server
    npm start
    ```
 4. Run the Frontend
-   ``` bash
+   ```bash
    cd ../frontend
    npm run dev
    ```
