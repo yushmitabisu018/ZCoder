@@ -20,26 +20,24 @@ For understanding of the application you can check this out https://drive.google
    git clone https://github.com/yushmitabisu018/ZCoder.git
    cd ZCoder
    ```
-   
-2. Install the Necessary Dependencies
-   ``` bash  
-cd frontend
-npm install
 
-cd ../server
-npm install
- ``` 
+   2. Install the necessary dependancies
+   ``` bash
+   cd frontend
+  npm install
+  cd ../server
+  npm install 
+   ```
 3. Run the Backend Server
    ``` bash
    cd server
-   node app.js
+   npm start
    ```
-5. Run the Frontend
+4. Run the Frontend
    ``` bash
-    cd ../frontend
+   cd ../frontend
    npm run dev
-```
-
+   ```
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
