@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Routes/Header';
 import Footer from '../../components/LandingPage/Footer';
-import './Home.css';
+import './home.css';
 const Home = () => {
   const [roomId, setRoomId] = useState('');
   const [username, setUserName] = useState('');
