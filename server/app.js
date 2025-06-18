@@ -180,7 +180,12 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/questions', authenticateUser, questionsRouter);
 app.use('/api/v1/user', authenticateUser, userRouter);
 
-// 404 Middleware
+// ✅ Root route (must be placed **before** 404 handler)
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'ZCoder backend is running 🚀' });
+});
+
+// 404 Middleware (should be after all valid routes)
 app.use(notFoundMiddleware);
 
 // Global Error Handler
@@ -197,7 +202,6 @@ const io = new Server(server, {
   },
 });
 
-// To keep track of connected users by socketId
 const userSocketMap = {};
 
 function getAllConnectedClients(roomId) {
@@ -243,10 +247,6 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.send('Socket.IO server is up!');
-});
-
 // Start server and connect to MongoDB
 const PORT = process.env.PORT || 5000;
 
@@ -267,4 +267,3 @@ const start = async () => {
 start();
 
 module.exports = app;
-
