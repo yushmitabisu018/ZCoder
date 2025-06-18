@@ -29,34 +29,65 @@ const Form = ({ option, setOption }) => {
         ? "login"
         : "forgot-password";
 
+    // try {
+    //   const response = await fetch(
+    //    `http://localhost:5000/api/v1/auth/${endpoint}`,
+    //     {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify(payload),
+    //     }
+    //   );
+
+    //   const data = await response.json();
+
+    //   if (!response.ok) throw new Error(data.message || "Request failed");
+
+    //   if (endpoint === "login") {
+    //     localStorage.setItem("token", data.token);
+    //     alert("Login successful!");
+    //     window.location.href = "/dashboard"; 
+    //   } else if (endpoint === "register") {
+    //     alert("Registration successful! Please log in.");
+    //     setOption(1); 
+    //   } else {
+    //     alert("Check your email for reset instructions");
+    //   }
+    // } catch (err) {
+    //   console.error("Error:", err.message);
+    //   alert(err.message);
+    // }
+
+
     try {
-      const response = await fetch(
-       `http://localhost:5000/api/v1/auth/${endpoint}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) throw new Error(data.message || "Request failed");
-
-      if (endpoint === "login") {
-        localStorage.setItem("token", data.token);
-        alert("Login successful!");
-        window.location.href = "/dashboard"; 
-      } else if (endpoint === "register") {
-        alert("Registration successful! Please log in.");
-        setOption(1); 
-      } else {
-        alert("Check your email for reset instructions");
-      }
-    } catch (err) {
-      console.error("Error:", err.message);
-      alert(err.message);
+  const response = await fetch(
+    `${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/${endpoint}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) throw new Error(data.message || "Request failed");
+
+  if (endpoint === "login") {
+    localStorage.setItem("token", data.token);
+    alert("Login successful!");
+    window.location.href = "/dashboard";
+  } else if (endpoint === "register") {
+    alert("Registration successful! Please log in.");
+    setOption(1);
+  } else {
+    alert("Check your email for reset instructions");
+  }
+} catch (err) {
+  console.error("Error:", err.message);
+  alert(err.message);
+}
+
   };
 
   return (
