@@ -46,11 +46,11 @@ export const resourcesLinks = [
 ];
 
 export const compilerLinks = [
-  { text: "C++ Compiler", href: "http://localhost:5173/home/compiler" },
-  { text: "Python Compiler", href: "http://localhost:5173/home/compiler" },
-  { text: "Java Compiler", href: "http://localhost:5173/home/compiler" },
-  { text: "JavaScript Compiler", href: "http://localhost:5173/home/compiler" },
-  { text: "C Compiler", href: "http://localhost:5173/home/compiler" },
+  { text: "C++ Compiler", href: "https://z-coder-one.vercel.app/home/compiler" },
+  { text: "Python Compiler", href: "https://z-coder-one.vercel.app/home/compiler" },
+  { text: "Java Compiler", href: "https://z-coder-one.vercel.app/home/compiler" },
+  { text: "JavaScript Compiler", href: "https://z-coder-one.vercel.app/home/compiler" },
+  { text: "C Compiler", href: "https://z-coder-one.vercel.app/home/compiler" },
 ];
 export const platformLinks = [
   { href: "https://codeforces.com/", text: "Codeforces" ,image:img1},
