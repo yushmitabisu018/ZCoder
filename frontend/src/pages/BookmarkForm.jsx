@@ -88,9 +88,8 @@
 
 // export default BookmarkForm;
 
-
 import React, { useState } from "react";
-import "./BookmarkForm.css";
+import "./BookmarkForm.css"; 
 import { useNavigate } from "react-router-dom";
 
 const BookmarkForm = () => {
@@ -100,8 +99,7 @@ const BookmarkForm = () => {
   const navigate = useNavigate();
 
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
 
   const HandleButtonClick = () => {
     navigate("/home/bookmark");
@@ -109,25 +107,25 @@ const BookmarkForm = () => {
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("hello");
     try {
       const response = await fetch(`${BACKEND_URL}/api/v1/questions/createQuestion`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}` 
         },
-        body: JSON.stringify({ title, url, solution }),
+        body: JSON.stringify({ title, url, solution })
       });
 
       if (!response.ok) {
-        throw new Error("Bookmark addition failed");
+        throw new Error('Bookmark addition failed');
       }
 
-      console.log("Bookmark added successfully");
+      console.log('Bookmark added successfully');
       navigate("/home/bookmark");
     } catch (error) {
-      console.error("Error during bookmark addition:", error.message);
+      console.error('Error during Bookmark Addition:', error.message);
     }
   };
 
@@ -167,11 +165,10 @@ const BookmarkForm = () => {
             required
           />
         </label>
-         <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
 
 export default BookmarkForm;
-
