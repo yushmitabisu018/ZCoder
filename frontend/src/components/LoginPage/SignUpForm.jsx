@@ -12,45 +12,86 @@ const SignUpForm = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setError('');
+  //   setLoading(true);
 
-    const formData = new FormData();
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('userName', userName);
-    if (avatar) {
-      formData.append('avatar', avatar);
-    }
+  //   const formData = new FormData();
+  //   formData.append('email', email);
+  //   formData.append('password', password);
+  //   formData.append('userName', userName);
+  //   if (avatar) {
+  //     formData.append('avatar', avatar);
+  //   }
 
-    try {
-      const response = await fetch('http://localhost:5000/api/v1/auth/register', {
-        method: 'POST',
-        body: formData
-      });
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/v1/auth/register', {
+  //       method: 'POST',
+  //       body: formData
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || data.msg || 'Registration failed');
-      }
+  //     if (!response.ok) {
+  //       throw new Error(data.message || data.msg || 'Registration failed');
+  //     }
 
-       localStorage.setItem('token', data.token);
+  //      localStorage.setItem('token', data.token);
        
-      setEmail('');
-      setPassword('');
-      setUserName('');
-      setAvatar(null);
+  //     setEmail('');
+  //     setPassword('');
+  //     setUserName('');
+  //     setAvatar(null);
 
-      navigate('/signin');
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
+  //     navigate('/signin');
+  //   } catch (error) {
+  //     setError(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError('');
+  setLoading(true);
+
+  const formData = new FormData();
+  formData.append('email', email);
+  formData.append('password', password);
+  formData.append('userName', userName);
+  if (avatar) {
+    formData.append('avatar', avatar);
+  }
+
+  try {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/register`, {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || data.msg || 'Registration failed');
     }
-  };
+
+    localStorage.setItem('token', data.token);
+
+    setEmail('');
+    setPassword('');
+    setUserName('');
+    setAvatar(null);
+
+    navigate('/signin');
+  } catch (error) {
+    setError(error.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <form className="account-form" onSubmit={handleSubmit}>
