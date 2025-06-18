@@ -1,6 +1,6 @@
 import React from "react";
 import { resourcesLinks, platformLinks, compilerLinks } from "../../constants/constant";
-import "./Footer.css"; 
+import "./footer.css"; 
 
 const Footer = () => {
   return (
