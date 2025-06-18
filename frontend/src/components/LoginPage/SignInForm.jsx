@@ -7,37 +7,70 @@ const SignInForm = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/v1/auth/login', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({ userName, password })
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Login failed');
+  //     }
+
+  //     const data = await response.json();
+
+  //     if (data.token) {
+  //       localStorage.setItem('token', data.token);
+  //       console.log('Login successful');
+  //       navigate('/home/bookmark');
+  //     } else {
+  //       throw new Error('Token not received');
+  //     }
+
+  //   } catch (error) {
+  //     console.error('Error during login:', error.message);
+  //     alert('Login failed: ' + error.message);
+  //   }
+  // };
+
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await fetch('http://localhost:5000/api/v1/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ userName, password })
-      });
+  try {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userName, password })
+    });
 
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
-
-      const data = await response.json();
-
-      if (data.token) {
-        localStorage.setItem('token', data.token);
-        console.log('Login successful');
-        navigate('/home/bookmark');
-      } else {
-        throw new Error('Token not received');
-      }
-
-    } catch (error) {
-      console.error('Error during login:', error.message);
-      alert('Login failed: ' + error.message);
+    if (!response.ok) {
+      throw new Error('Login failed');
     }
-  };
+
+    const data = await response.json();
+
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      console.log('Login successful');
+      navigate('/home/bookmark');
+    } else {
+      throw new Error('Token not received');
+    }
+
+  } catch (error) {
+    console.error('Error during login:', error.message);
+    alert('Login failed: ' + error.message);
+  }
+};
 
   return (
     <form className="account-form" onSubmit={handleSubmit}>
