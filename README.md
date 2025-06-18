@@ -33,7 +33,7 @@ For understanding of the application you can check this out https://drive.google
 3. Run the Backend Server
    ```bash
    cd server
-   node app.js
+   npm start
    ```
 4. Run the Frontend
    ```bash
